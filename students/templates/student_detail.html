@@ -1,0 +1,18 @@
+{% extends './base.html' %}
+
+{% block content %}
+    <h2>Student Details</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ student.name }}</h5>
+            <p class="card-text">
+                Email: {{ student.email }}<br>
+                Phone: {{ student.phone }}<br>
+                Course: {{ student.course }}<br>
+                Joined: {{ student.created_at|date:"F j, Y" }}
+            </p>
+            <a href="{% url 'student_edit' student.pk %}" class="btn btn-warning">Edit</a>
+            <a href="{% url 'student_list' %}" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+{% endblock %}
